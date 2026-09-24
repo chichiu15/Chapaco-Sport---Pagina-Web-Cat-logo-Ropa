@@ -1,0 +1,311 @@
+.configNegocio {
+  padding: 2rem 0 4rem;
+}
+
+.configNegocio__cabecera {
+  margin-bottom: 2rem;
+}
+
+.configNegocio__cabecera p {
+  margin: -1rem 0 0;
+  color: #999;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.configNegocio__seccion {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.configNegocio__titulo {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.configNegocio__titulo h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.configNegocio__titulo p {
+  margin: 0.35rem 0 0;
+  color: #888;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.configNegocio__icono {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef3038;
+  background: rgba(239, 48, 56, 0.09);
+  border: 1px solid rgba(239, 48, 56, 0.22);
+  border-radius: 9px;
+}
+
+.configNegocio__descripcionForm textarea,
+.configNegocio__formulario input,
+.configNegocio__formulario textarea,
+.configNegocio__formulario select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.85rem;
+  color: #fff;
+  background: rgba(10, 10, 12, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 7px;
+  outline: none;
+  font-family: inherit;
+}
+
+.configNegocio__descripcionForm textarea:focus,
+.configNegocio__formulario input:focus,
+.configNegocio__formulario textarea:focus,
+.configNegocio__formulario select:focus {
+  border-color: rgba(239, 48, 56, 0.75);
+}
+
+.configNegocio__descripcionForm textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.configNegocio__descripcionInferior {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.configNegocio__descripcionInferior > span {
+  color: #777;
+  font-size: 0.75rem;
+}
+
+.configNegocio__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.configNegocio__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.configNegocio__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 70px;
+  padding: 1rem;
+  background: rgba(8, 8, 10, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+}
+
+.configNegocio__item > div:first-child {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.configNegocio__item strong {
+  color: #fff;
+  font-size: 0.93rem;
+}
+
+.configNegocio__item span:not(.badge-estado) {
+  color: #aaa;
+  font-size: 0.78rem;
+  word-break: break-word;
+}
+
+.configNegocio__item small {
+  color: #666;
+  font-size: 0.7rem;
+}
+
+.configNegocio__accionesItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.configNegocio__formulario {
+  padding: 1.1rem;
+  background: rgba(8, 8, 10, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 9px;
+}
+
+.configNegocio__formulario h3 {
+  margin: 0 0 1.2rem;
+  color: #fff;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.configNegocio__formulario .grupo-input {
+  margin-bottom: 1rem;
+}
+
+.configNegocio__formulario .grupo-input label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #ccc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.configNegocio__formulario .grupo-input small {
+  display: block;
+  margin-top: 0.45rem;
+  color: #777;
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.configNegocio__switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  margin: 0.5rem 0 1.1rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.configNegocio__switch > span {
+  color: #ddd;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.configNegocio__botonesForm {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.configNegocio__btnPrincipal,
+.configNegocio__btnSecundario {
+  min-height: 42px;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.configNegocio__btnPrincipal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  color: #fff;
+  background: #ef3038;
+}
+
+.configNegocio__btnSecundario {
+  color: #fff;
+  background: #303033;
+}
+
+.configNegocio__btnPrincipal:hover,
+.configNegocio__btnSecundario:hover {
+  transform: translateY(-1px);
+}
+
+.configNegocio__btnPrincipal:disabled,
+.configNegocio__btnSecundario:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.configNegocio__vacio {
+  padding: 2rem 1rem;
+  color: #777;
+  text-align: center;
+  font-size: 0.82rem;
+  background: rgba(8, 8, 10, 0.45);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+}
+
+@media (max-width: 1100px) {
+  .configNegocio__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .configNegocio__formulario {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .configNegocio {
+    padding: 1.25rem 0 3rem;
+  }
+
+  .configNegocio__seccion {
+    padding: 1rem;
+    border-radius: 9px;
+  }
+
+  .configNegocio__item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .configNegocio__accionesItem {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .configNegocio__descripcionInferior {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .configNegocio__descripcionInferior > span {
+    text-align: right;
+  }
+
+  .configNegocio__btnPrincipal,
+  .configNegocio__btnSecundario {
+    width: 100%;
+  }
+
+  .configNegocio__botonesForm {
+    flex-direction: column;
+  }
+}

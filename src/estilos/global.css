@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-base);
+  background-color: var(--color-fondo);
+  color: var(--color-blanco);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-rojo);
+  outline-offset: 2px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.esqueleto {
+  background: linear-gradient(
+    90deg,
+    var(--color-superficie) 25%,
+    var(--color-superficie-hover) 50%,
+    var(--color-superficie) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+ 
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Escritorio grande */
+@media (min-width: 1024px) {
+  .contenedor {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* Monitores muy grandes */
+@media (min-width: 1600px) {
+  .contenedor {
+    padding-inline: 0rem;
+  }
+}
+
+.contenidoPrincipal {
+  min-height: 100vh;
+  padding-top: calc(var(--alto-ticker) + var(--alto-header));
+}
+
+.pantallaCarga {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pantallaCarga__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-borde);
+  border-top-color: var(--color-rojo);
+  border-radius: 50%;
+  animation: girar 700ms linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pantallaEnConstruccion {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-xs);
+  text-align: center;
+  color: var(--color-texto-mudo);
+  padding-block: var(--espacio-xl);
+}
+
+.pantallaEnConstruccion h1 {
+  color: var(--color-blanco);
+  font-size: var(--tamano-lg);
+}
+
+/**ADMINISTRADOR/
+/* Agrega esto a tu global.css */
+.loginAdmin__contenedor { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #111; }
+.loginAdmin__tarjeta { background: #1a1a1a; padding: 3rem; border-radius: 8px; width: 100%; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: center; border-top: 4px solid var(--color-rojo, #ff3b3b); }
+.loginAdmin__titulo { color: #fff; margin-bottom: 2rem; font-weight: 800; font-size: 1.5rem; }
+.loginAdmin__titulo span { color: var(--color-rojo, #ff3b3b); font-size: 1rem; }
+.grupo-input { text-align: left; margin-bottom: 1.5rem; }
+.grupo-input label { display: block; color: #aaa; font-size: 0.85rem; margin-bottom: 0.5rem; text-transform: uppercase; }
+.grupo-input input { width: 100%; padding: 0.8rem; border-radius: 4px; border: 1px solid #333; background: #222; color: #fff; }
+.grupo-input input:focus { outline: none; border-color: var(--color-rojo, #ff3b3b); }
+.btn-link { background: none; border: none; color: #888; margin-top: 1.5rem; cursor: pointer; font-size: 0.9rem; transition: color 0.3s; }
+.btn-link:hover { color: #fff; text-decoration: underline; }
+.btn--block { width: 100%; padding: 1rem; background-color: var(--color-rojo, #ff3b3b); color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.btn--block:hover { background-color: #d32f2f; }
+.alerta { padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; font-size: 0.9rem; }
+.alerta--error { background: rgba(255, 59, 59, 0.1); color: #ff3b3b; border: 1px solid #ff3b3b; }
+.alerta--exito { background: rgba(76, 175, 80, 0.1); color: #4caf50; border: 1px solid #4caf50; }
+
+
+/* ==========================================================================
+   LAYOUT Y SIDEBAR ADMIN
+   ========================================================================== */
+
+.adminLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-fondo);
+}
+
+.adminLayout__contenido {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+/* Sidebar Contenedor */
+.adminSidebar {
+  width: 260px;
+  background: rgba(20, 20, 25, 0.95);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid var(--color-borde);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 1.25rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+  transition: transform var(--transicion-base);
+}
+
+/* Branding Logo Sidebar */
+.adminSidebar__brand {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.adminSidebar__logo {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--color-blanco);
+  letter-spacing: 1px;
+}
+
+.adminSidebar__sub {
+  font-size: 0.75rem;
+  color: var(--color-rojo);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Navegación */
+.adminSidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.adminSidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  color: var(--color-texto-mudo);
+  border-radius: var(--radio-borde);
+  font-weight: 600;
+  font-size: var(--tamano-sm);
+  transition: all var(--transicion-rapida);
+}
+
+.adminSidebar__link:hover {
+  color: var(--color-blanco);
+  background: var(--color-superficie-hover);
+}
+
+.adminSidebar__link--activo {
+  color: var(--color-blanco);
+  background: var(--color-rojo);
+  box-shadow: 0 4px 12px rgba(228, 41, 47, 0.3);
+}
+
+.adminSidebar__link--activo:hover {
+  background: var(--color-rojo-hover);
+}
+
+/* Footer / Usuario */
+.adminSidebar__footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-borde);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.adminSidebar__usuario {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.adminSidebar__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-rojo);
+  color: var(--color-blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.adminSidebar__usuarioInfo {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.adminSidebar__usuarioNombre {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-blanco);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.adminSidebar__usuarioRol {
+  font-size: 0.72rem;
+  color: var(--color-texto-mudo);
+}
+
+.adminSidebar__btnLogout {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radio-borde);
+  background: var(--color-superficie);
+  color: var(--color-texto-mudo-claro);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--transicion-rapida);
+}
+
+.adminSidebar__btnLogout:hover {
+  background: var(--color-rojo-suave);
+  color: var(--color-rojo);
+}
+
+/* ==========================================================================
+   VISIBILIDAD Y POSICIONAMIENTO DEL MENÚ HAMBURGUESA
+   ========================================================================== */
+
+/* Oculto por defecto en escritorio */
+.adminSidebar__hamburguesa {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  color: var(--color-blanco);
+  padding: 0.6rem;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transicion-rapida);
+}
+
+.adminSidebar__hamburguesa:hover {
+  background: var(--color-superficie-hover);
+}
+
+.adminSidebar__overlay {
+  display: none;
+}
+
+/* Ajustes Responsivos Móviles (pantallas menores a 900px) */
+@media (max-width: 900px) {
+  /* Mostrar botón únicamente en móviles */
+  .adminSidebar__hamburguesa {
+    display: flex;
+  }
+
+  /* Ocultar barra lateral fuera de pantalla */
+  .adminSidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  /* Desplegar la barra lateral */
+  .adminSidebar--abierto {
+    transform: translateX(0);
+  }
+
+  /* Fondo oscuro superpuesto al abrir menú */
+  .adminSidebar__overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 950;
+  }
+
+  /* Margen superior en el contenido principal para no solaparse */
+  .adminLayout__contenido {
+    padding-top: 4.5rem;
+  }
+}
+
+/* Estilos actualizados para la Barra Lateral del Admin */
+.adminSidebar__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.adminSidebar__logoImg {
+  max-height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.adminSidebar__logoTitulo {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--color-blanco);
+  letter-spacing: 0.5px;
+}
+
+.adminSidebar__sub {
+  font-size: 0.7rem;
+  color: var(--color-rojo);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* Fila única para usuario y logout */
+.adminSidebar__footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-borde);
+}
+
+.adminSidebar__usuarioRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: var(--color-superficie);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+}
+
+.adminSidebar__usuarioInfoCompacto {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  overflow: hidden;
+}
+
+.adminSidebar__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-fondo);
+  border: 1px solid var(--color-rojo);
+  color: var(--color-blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.adminSidebar__usuarioNombre {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-blanco);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+.adminSidebar__btnLogoutIcono {
+  background: transparent;
+  border: none;
+  color: var(--color-texto-mudo);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 4px;
+  transition: all var(--transicion-rapida);
+  flex-shrink: 0;
+}
+
+.adminSidebar__btnLogoutIcono:hover {
+  background: var(--color-rojo-suave);
+  color: var(--color-rojo);
+}

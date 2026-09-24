@@ -1,0 +1,49 @@
+.barraAnuncios {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  height: var(--alto-ticker);
+  background-color: var(--color-rojo);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.barraAnuncios__pista {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: desplazarTicker 10s linear infinite;
+  will-change: transform;
+}
+
+.barraAnuncios__bloque {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-blanco);
+  font-size: var(--tamano-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding-inline: var(--espacio-xs);
+}
+
+.barraAnuncios__separadorFinal {
+  color: var(--color-blanco);
+}
+
+@keyframes desplazarTicker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-35%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barraAnuncios__pista {
+    animation: none;
+  }
+}

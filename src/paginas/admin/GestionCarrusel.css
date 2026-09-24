@@ -1,0 +1,638 @@
+.gestionCarrusel {
+  width: 100%;
+  padding: 2rem;
+}
+
+
+.gestionCarrusel__encabezado {
+  margin-bottom: 2rem;
+}
+
+
+.gestionCarrusel__encabezado
+.admin-header-title {
+  margin-bottom: 0.4rem;
+}
+
+
+.gestionCarrusel__encabezado p {
+  color: var(--color-texto-mudo);
+  font-size: 0.85rem;
+}
+
+
+/* =========================================
+   LAYOUT
+   ========================================= */
+
+.gestionCarrusel__layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+/* =========================================
+   TABLA
+   ========================================= */
+
+.gestionCarrusel__tabla {
+  min-width: 900px;
+}
+
+
+.gestionCarrusel__miniatura {
+  width: 100px;
+  height: 58px;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+}
+
+
+.gestionCarrusel__contenidoTabla {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  white-space: normal;
+}
+
+
+.gestionCarrusel__contenidoTabla strong {
+  font-size: 0.78rem;
+}
+
+
+.gestionCarrusel__contenidoTabla span {
+  font-size: 0.65rem !important;
+
+  color:
+    var(--color-texto-mudo);
+}
+
+
+.gestionCarrusel__destino {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.gestionCarrusel__destino span {
+  width: fit-content;
+
+  padding: 3px 5px;
+
+  background:
+    rgba(228, 41, 47, 0.12);
+
+  color:
+    var(--color-rojo);
+
+  border-radius: 3px;
+
+  font-size: 0.6rem !important;
+
+  font-weight: 800;
+}
+
+
+.gestionCarrusel__destino small {
+  max-width: 160px;
+
+  overflow: hidden;
+
+  text-overflow:
+    ellipsis;
+}
+
+
+/* =========================================
+   ESTADO
+   ========================================= */
+
+.gestionCarrusel__estado {
+  padding: 0.25rem 0.5rem;
+
+  border-radius: 4px;
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+}
+
+
+.gestionCarrusel__estado--activo {
+  color: #4caf50;
+
+  background:
+    rgba(76, 175, 80, 0.15);
+}
+
+
+.gestionCarrusel__estado--inactivo {
+  color: #f44336;
+
+  background:
+    rgba(244, 67, 54, 0.15);
+}
+
+
+/* =========================================
+   ACCIONES
+   ========================================= */
+
+.gestionCarrusel__orden,
+.gestionCarrusel__acciones {
+  display: flex;
+
+  gap: 0.35rem;
+
+  align-items: center;
+}
+
+
+/* =========================================
+   FORMULARIO
+   ========================================= */
+
+.gestionCarrusel__formulario {
+  position: static;
+
+  width: 100%;
+
+  padding: 1.75rem;
+
+  background: var(--color-superficie);
+
+  border: 1px solid var(--color-borde);
+
+  border-radius: var(--radio-borde);
+}
+
+
+.gestionCarrusel__formulario h3 {
+  margin-bottom: 1.5rem;
+
+  padding-bottom: 0.8rem;
+
+  border-bottom:
+    1px solid
+    var(--color-borde);
+}
+
+
+.gestionCarrusel__formulario
+textarea,
+.gestionCarrusel__formulario
+select {
+  width: 100%;
+
+  padding: 0.85rem 1rem;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.15);
+
+  border-radius: 6px;
+
+  background:
+    rgba(10,10,12,0.6);
+
+  color: white;
+
+  font-family: inherit;
+}
+
+
+.gestionCarrusel__formulario
+small {
+  display: block;
+
+  margin-top: 0.4rem;
+
+  color:
+    var(--color-texto-mudo);
+
+  font-size: 0.68rem;
+}
+
+
+/* =========================================
+   ENLACE INTERNO
+   ========================================= */
+
+.gestionCarrusel__enlaceInterno {
+  display: flex;
+
+  align-items: stretch;
+
+  width: 100%;
+}
+
+
+.gestionCarrusel__enlaceInterno
+span {
+  display: flex;
+
+  align-items: center;
+
+  padding-inline: 0.75rem;
+
+  background:
+    #292929;
+
+  color:
+    var(--color-texto-mudo);
+
+  border:
+    1px solid
+    #444;
+
+  border-right: 0;
+
+  border-radius:
+    6px 0 0 6px;
+
+  white-space: nowrap;
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+}
+
+
+.gestionCarrusel__enlaceInterno
+input {
+  border-radius:
+    0 6px 6px 0;
+}
+
+
+/* =========================================
+   PREVIEW IMAGEN FORM
+   ========================================= */
+
+.gestionCarrusel__previewImagen {
+  overflow: hidden;
+
+  margin-bottom: 1rem;
+
+  border-radius: 7px;
+
+  border:
+    1px solid
+    var(--color-borde);
+}
+
+
+.gestionCarrusel__previewImagen img {
+  width: 100%;
+
+  aspect-ratio:
+    16 / 7;
+
+  object-fit: cover;
+}
+
+
+.gestionCarrusel__btnPreview {
+  width: 100%;
+
+  margin-bottom: 0.75rem;
+
+  padding: 0.8rem;
+
+  border:
+    1px solid
+    var(--color-borde);
+
+  border-radius: 5px;
+
+  color:
+    var(--color-texto-mudo-claro);
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+}
+
+
+.gestionCarrusel__btnPreview:hover {
+  background:
+    var(--color-superficie-hover);
+}
+
+
+.gestionCarrusel__cancelar {
+  width: 100%;
+
+  padding: 0.8rem;
+
+  margin-top: 0.7rem;
+
+  background: #333;
+
+  border-radius: 5px;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   MODAL PREVIEW
+   ========================================= */
+
+.gestionCarruselPreview {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 5000;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 1rem;
+
+  background:
+    rgba(0,0,0,0.82);
+
+  backdrop-filter:
+    blur(5px);
+}
+
+
+.gestionCarruselPreview__modal {
+  position: relative;
+
+  width:
+    min(
+      1100px,
+      96vw
+    );
+
+  overflow: hidden;
+
+  background:
+    var(--color-superficie);
+
+  border:
+    1px solid
+    var(--color-borde);
+
+  border-radius: 10px;
+}
+
+
+.gestionCarruselPreview__cerrar {
+  position: absolute;
+
+  top: 12px;
+
+  right: 12px;
+
+  z-index: 5;
+
+  width: 36px;
+
+  height: 36px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0,0,0,0.7);
+
+  color: white;
+
+  font-size: 1.5rem;
+}
+
+
+.gestionCarruselPreview__banner {
+  position: relative;
+
+  min-height: 480px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 4rem;
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+
+.gestionCarruselPreview__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13,13,13,0.92),
+      rgba(13,13,13,0.45),
+      rgba(13,13,13,0.1)
+    );
+}
+
+
+.gestionCarruselPreview__contenido {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 550px;
+}
+
+
+.gestionCarruselPreview__sintesis {
+  color:
+    var(--color-rojo);
+
+  font-size: 0.75rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+
+.gestionCarruselPreview__contenido h2 {
+  margin-top: 0.6rem;
+
+  font-size: 3rem;
+
+  font-weight: 900;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+
+.gestionCarruselPreview__contenido h3 {
+  color:
+    var(--color-rojo);
+
+  font-size: 2.7rem;
+
+  font-weight: 900;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+
+.gestionCarruselPreview__contenido p {
+  max-width: 450px;
+
+  margin-top: 1rem;
+
+  line-height: 1.6;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+
+  color:
+    #ccc;
+}
+
+
+.gestionCarruselPreview__boton {
+  display: inline-block;
+
+  margin-top: 1.5rem;
+
+  padding:
+    0.8rem
+    1.4rem;
+
+  background:
+    var(--color-rojo);
+
+  border-radius: 4px;
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+}
+
+
+.gestionCarruselPreview__pie {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1rem 1.25rem;
+}
+
+
+.gestionCarruselPreview__pie
+span {
+  color:
+    var(--color-texto-mudo);
+
+  font-size: 0.75rem;
+}
+
+
+.gestionCarruselPreview__pie
+.btn--block {
+  width: auto;
+
+  margin: 0;
+
+  padding-inline: 2rem;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media
+(max-width: 1100px) {
+
+  .gestionCarrusel__layout {
+    grid-template-columns: 1fr;
+  }
+
+
+  .gestionCarrusel__formulario {
+    position: static;
+  }
+}
+
+
+@media
+(max-width: 900px) {
+
+  .gestionCarrusel {
+    padding: 0;
+  }
+
+
+  .gestionCarruselPreview__banner {
+    min-height: 420px;
+
+    padding: 2rem;
+  }
+
+
+  .gestionCarruselPreview__contenido h2 {
+    font-size: 2rem;
+  }
+
+
+  .gestionCarruselPreview__contenido h3 {
+    font-size: 1.7rem;
+  }
+
+
+  .gestionCarruselPreview__pie {
+    flex-direction: column;
+  }
+
+
+  .gestionCarruselPreview__pie
+  .btn--block {
+    width: 100%;
+  }
+
+}
+
+.gestionCarrusel__formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.5rem;
+}
+
+.gestionCarrusel__campoCompleto {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .gestionCarrusel__formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .gestionCarrusel__campoCompleto {
+    grid-column: auto;
+  }
+}

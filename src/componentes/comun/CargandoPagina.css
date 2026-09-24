@@ -1,0 +1,22 @@
+.pantallaCargaGlobal {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-fondo, #111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999; /* Máxima prioridad visual */
+}
+
+.spinnerGlobal {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--color-rojo, #ff3b3b); /* Tu color de resalte */
+  border-radius: 50%;
+  animation: girarSpinner 1s linear infinite;
+}
+
+@keyframes girarSpinner {
+  to { transform: rotate(360deg); }
+}

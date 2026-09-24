@@ -1,0 +1,266 @@
+/* =========================================
+   LAYOUT DE GESTIÓN (WIRE-FRAME)
+   ========================================= */
+
+/* 1. Regla de oro: El padding no debe romper los anchos del 100% */
+.contenedor, .admin-grid, .admin-form-panel, .admin-toolbar {
+  box-sizing: border-box;
+}
+
+.admin-header-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  color: var(--color-blanco, #fff);
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px; /* Tabla ocupa resto, Formulario 380px */
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* TRUCO CLAVE: min-width: 0 permite que el hijo del grid se encoja en vez de desbordar la pantalla */
+.admin-grid > div {
+  min-width: 0;
+}
+
+/* --- BARRA DE HERRAMIENTAS (BUSCAR/FILTRAR) --- */
+.admin-toolbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.admin-search {
+  flex: 1;
+}
+
+/* Todos los inputs y selects deben respetar el tamaño de sus contenedores */
+.grupo-input input,
+.grupo-input select,
+.grupo-input textarea {
+  box-sizing: border-box !important;
+  width: 100% !important; /* Fuerza a respetar el ancho incluso si hay estilos en línea */
+}
+
+/* --- CONTENEDORES --- */
+.admin-table-container {
+  background: var(--color-superficie, #1a1a1a);
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--color-borde, #333);
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-form-panel {
+  background: var(--color-superficie, #1a1a1a);
+  border-radius: 8px;
+  padding: 2rem;
+  position: sticky;
+  top: 2rem;
+  border: 1px solid var(--color-borde, #333);
+  width: 100%;
+}
+
+.admin-form-panel h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--color-borde, #333);
+  padding-bottom: 0.5rem;
+}
+
+/* --- TABLA RESPONSIVA CON COLUMNA CONGELADA --- */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 320px; /* Ancho mínimo reducido para caber en móviles */
+}
+
+/* Reducción general de padding y texto */
+.admin-table th,
+.admin-table td {
+  padding: 0.35rem 0.4rem; /* Padding ultra reducido entre celdas */
+  font-size: 0.78rem; /* Tamaño de letra más pequeño */
+  white-space: nowrap;
+}
+
+/* BLOQUEO Y CONTROL DE ANCHO EN LA PRIMERA COLUMNA */
+.admin-table th:first-child,
+.admin-table td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: var(--color-superficie, #1a1a1a);
+  z-index: 1;
+  max-width: 125px; /* Limita el ancho para no tapar la pantalla */
+  min-width: 100px;
+  white-space: normal; /* Permite que correos o nombres largos salten de línea */
+  word-break: break-word; /* Corta textos sin espacios si es necesario */
+}
+
+.admin-table th:first-child {
+  z-index: 2;
+}
+
+/* Sombra ligera para la columna bloqueada */
+.admin-table th:first-child::after,
+.admin-table td:first-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -4px;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
+  pointer-events: none;
+}
+
+.admin-table th {
+  text-align: left;
+  border-bottom: 2px solid var(--color-borde, #333);
+  color: #aaa;
+  font-size: 0.7rem; /* Encabezados más pequeños */
+  text-transform: uppercase;
+}
+
+.admin-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+  vertical-align: middle;
+}
+
+.admin-table td div {
+  font-size: 0.7rem !important;
+  line-height: 1.1;
+}
+
+/* --- SWITCH (INTERRUPTOR DE ESTADO) --- */
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.switch-status {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch-status input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-status {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.slider-status:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider-status {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider-status:before {
+  transform: translateX(20px);
+}
+
+/* --- BOTONES DE ACCIÓN (ICONOS) --- */
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  padding: 3px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon svg {
+  width: 15px; /* Iconos más compactos */
+  height: 15px;
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.btn-icon--delete:hover {
+  background: rgba(244, 67, 54, 0.15);
+  color: #f44336;
+}
+
+/* BADGES Y BOTONES COMPACTOS */
+.badge-estado {
+  padding: 0.15rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.badge-activo { background: rgba(76, 175, 80, 0.15); color: #4CAF50; }
+.badge-inactivo { background: rgba(244, 67, 54, 0.15); color: #f44336; }
+
+/* --- RESPONSIVO MÓVIL ESTRICTO --- */
+@media (max-width: 900px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .admin-form-panel {
+    /* En móvil, el formulario baja debajo de la tabla y ocupa todo el ancho */
+    position: static;
+    margin-top: 0;
+    width: 100%;
+    padding: 1.5rem; /* Un poco menos de espacio interior para ahorrar pantalla */
+  }
+  
+  .admin-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .admin-toolbar .grupo-input {
+    width: 100% !important; 
+    margin-bottom: 0 !important;
+  }
+}

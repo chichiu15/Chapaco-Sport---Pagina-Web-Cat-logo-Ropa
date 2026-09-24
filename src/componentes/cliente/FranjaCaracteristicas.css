@@ -1,0 +1,75 @@
+/* src/componentes/cliente/FranjaCaracteristicas.css */
+
+.franjaCaracteristicas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--color-superficie);
+  border-block: 1px solid var(--color-borde);
+}
+
+.franjaCaracteristicas__item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+  padding: var(--espacio-md);
+  border-right: 1px solid var(--color-borde);
+  transition: background-color var(--transicion-rapida);
+}
+
+.franjaCaracteristicas__item:last-child {
+  border-right: none;
+}
+
+.franjaCaracteristicas__item:hover {
+  background-color: var(--color-superficie-hover);
+}
+
+.franjaCaracteristicas__icono {
+  flex-shrink: 0;
+  color: var(--color-rojo);
+}
+
+.franjaCaracteristicas__titulo {
+  font-size: var(--tamano-sm);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-blanco);
+}
+
+.franjaCaracteristicas__descripcion {
+  margin-top: 2px;
+  font-size: var(--tamano-xs);
+  color: var(--color-texto-mudo);
+  line-height: 1.4;
+}
+@media (max-width: 900px) {
+  .franjaCaracteristicas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .franjaCaracteristicas__item:nth-child(2) {
+    border-right: none;
+  }
+
+  .franjaCaracteristicas__item:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--color-borde);
+  }
+}
+@media (max-width: 560px) {
+  .franjaCaracteristicas {
+    grid-template-columns: 1fr;
+  }
+
+  .franjaCaracteristicas__item {
+    border-right: none;
+    border-bottom: 1px solid var(--color-borde);
+  }
+
+  .franjaCaracteristicas__item:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--color-borde);
+  }
+
+  .franjaCaracteristicas__item:last-child {
+    border-bottom: none;
+  }
+}

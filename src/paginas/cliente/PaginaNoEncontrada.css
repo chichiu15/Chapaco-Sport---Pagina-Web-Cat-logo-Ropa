@@ -1,0 +1,202 @@
+/* =========================================
+   PÁGINA 404 - CHAPACO SPORT
+   ========================================= */
+
+.pagina-404 {
+  width: 100%;
+  min-height: 70vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4rem 1.5rem;
+
+  box-sizing: border-box;
+
+  background: #0d0d0d;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.pagina-404__contenido {
+  width: 100%;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   CÓDIGO 404
+   ========================================= */
+
+.pagina-404__codigo {
+  margin: 0;
+
+  font-size: clamp(7rem, 20vw, 13rem);
+  font-weight: 900;
+  line-height: 0.85;
+
+  letter-spacing: -0.06em;
+
+  color: #ffffff;
+
+  opacity: 0.12;
+
+  user-select: none;
+}
+
+
+/* =========================================
+   TÍTULO
+   ========================================= */
+
+.pagina-404__titulo {
+  margin: -1rem 0 1rem;
+
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   DESCRIPCIÓN
+   ========================================= */
+
+.pagina-404__descripcion {
+  max-width: 520px;
+
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================
+   ACCIONES
+   ========================================= */
+
+.pagina-404__acciones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  margin-top: 2.25rem;
+}
+
+
+/* =========================================
+   BOTONES
+   ========================================= */
+
+.pagina-404__boton {
+  min-width: 170px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.9rem 1.5rem;
+
+  border: 1px solid #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  box-sizing: border-box;
+}
+
+
+.pagina-404__boton:hover {
+  transform: translateY(-2px);
+}
+
+
+.pagina-404__boton--principal {
+  background: #ffffff;
+  color: #0d0d0d;
+}
+
+
+.pagina-404__boton--principal:hover {
+  background: #e8e8e8;
+  border-color: #e8e8e8;
+}
+
+
+.pagina-404__boton--secundario {
+  background: transparent;
+  color: #ffffff;
+}
+
+
+.pagina-404__boton--secundario:hover {
+  background: #ffffff;
+  color: #0d0d0d;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .pagina-404 {
+    min-height: 65vh;
+
+    padding: 3rem 1.25rem;
+  }
+
+
+  .pagina-404__titulo {
+    margin-top: -0.5rem;
+  }
+
+
+  .pagina-404__acciones {
+    width: 100%;
+
+    flex-direction: column;
+  }
+
+
+  .pagina-404__boton {
+    width: 100%;
+    max-width: 320px;
+  }
+
+}

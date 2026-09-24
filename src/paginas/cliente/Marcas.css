@@ -1,0 +1,1914 @@
+/* =========================================================
+   PANTALLA MARCAS
+========================================================= */
+
+.pantallaMarcas {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #090909;
+  color: #ffffff;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HERO PRINCIPAL
+========================================================= */
+
+.marcasHero {
+  position: relative;
+
+  min-height: 610px;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+
+  padding:
+    68px
+    clamp(28px, 5vw, 90px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 76% 44%,
+      rgba(239, 45, 52, 0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 90% 75%,
+      rgba(239, 45, 52, 0.07),
+      transparent 38%
+    ),
+    linear-gradient(
+      110deg,
+      #090909 0%,
+      #090909 52%,
+      #100707 78%,
+      #090909 100%
+    );
+
+  border-bottom: 1px solid #242424;
+}
+
+
+/* =========================================================
+   TEXTO DECORATIVO HERO
+========================================================= */
+
+.marcasHero__fondoTexto {
+  position: absolute;
+
+  left: 2%;
+  bottom: -75px;
+
+  color: rgba(255, 255, 255, 0.018);
+
+  font-size:
+    clamp(
+      180px,
+      24vw,
+      420px
+    );
+
+  font-weight: 950;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.08em;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENIDO IZQUIERDO HERO
+========================================================= */
+
+.marcasHero__contenido {
+  position: relative;
+  z-index: 4;
+
+  max-width: 850px;
+}
+
+
+/* =========================================================
+   BADGE HERO
+========================================================= */
+
+.marcasHero__badge {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 26px;
+
+  padding:
+    10px
+    17px;
+
+  color:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+
+  background:
+    rgba(239, 45, 52, 0.07);
+
+  border:
+    1px solid
+    rgba(239, 45, 52, 0.35);
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   TÍTULO HERO
+========================================================= */
+
+.marcasHero h1 {
+  max-width: 900px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      54px,
+      6.4vw,
+      104px
+    );
+
+  font-weight: 950;
+
+  line-height: 0.87;
+
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+}
+
+
+.marcasHero h1 span {
+  display: block;
+
+  color:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+}
+
+
+.marcasHero__contenido > p {
+  max-width: 630px;
+
+  margin:
+    30px
+    0
+    0;
+
+  color: #b6b6b6;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   VISUAL HERO
+========================================================= */
+
+.marcasHero__visual {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+
+.marcasHero__imagenWrapper {
+  position: relative;
+
+  width: 112%;
+  max-width: 820px;
+
+  margin-right: -6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+
+.marcasHero__resplandor {
+  position: absolute;
+
+  width: 78%;
+  height: 68%;
+
+  left: 52%;
+  top: 52%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(239, 45, 52, 0.24) 0%,
+      rgba(239, 45, 52, 0.1) 42%,
+      transparent 72%
+    );
+
+  filter: blur(42px);
+
+  pointer-events: none;
+
+  animation:
+    marcasHeroPulso
+    4s
+    ease-in-out
+    infinite;
+}
+
+
+.marcasHero__imagen {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 820px;
+
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 26px 38px
+      rgba(0, 0, 0, 0.75)
+    )
+    drop-shadow(
+      0 0 22px
+      rgba(239, 45, 52, 0.12)
+    );
+
+  animation:
+    marcasHeroFlotar
+    5s
+    ease-in-out
+    infinite;
+
+  transition:
+    filter 300ms ease;
+}
+
+
+.marcasHero__imagen:hover {
+  filter:
+    drop-shadow(
+      0 30px 44px
+      rgba(0, 0, 0, 0.82)
+    )
+    drop-shadow(
+      0 0 32px
+      rgba(239, 45, 52, 0.22)
+    );
+}
+
+
+@keyframes marcasHeroFlotar {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(-9px)
+      scale(1.008);
+  }
+
+}
+
+
+@keyframes marcasHeroPulso {
+
+  0%,
+  100% {
+    opacity: 0.7;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1.08);
+  }
+
+}
+
+
+/* =========================================================
+   SECCIÓN MARCAS
+========================================================= */
+
+.marcasSeccion {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    68px
+    clamp(24px, 4vw, 64px)
+    95px;
+}
+
+
+/* =========================================================
+   ENCABEZADO MARCAS
+========================================================= */
+
+.marcasSeccion__encabezado {
+  max-width: 1700px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 50px;
+
+  margin:
+    0
+    auto
+    34px;
+}
+
+
+/* =========================================================
+   EXPLORA
+========================================================= */
+
+.marcasSeccion__eyebrow {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 11px;
+
+  color:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+
+  font-size: 12px;
+  font-weight: 950;
+
+  letter-spacing: 0.19em;
+
+  text-transform: uppercase;
+}
+
+
+.marcasSeccion__eyebrow::after {
+  content: '';
+
+  width: 44px;
+  height: 2px;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(
+        --color-rojo,
+        #ef2d34
+      ),
+      rgba(239, 45, 52, 0.15)
+    );
+
+  transform-origin: left;
+
+  animation:
+    marcasLineaEntrada
+    1s
+    ease
+    both;
+}
+
+
+@keyframes marcasLineaEntrada {
+
+  from {
+    opacity: 0;
+
+    transform:
+      scaleX(0);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scaleX(1);
+  }
+
+}
+
+
+/* =========================================================
+   TÍTULO MARCAS
+========================================================= */
+
+.marcasSeccion__encabezado h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      42px,
+      4.2vw,
+      68px
+    );
+
+  font-weight: 950;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.05em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TEXTO DERECHA
+========================================================= */
+
+.marcasSeccion__encabezado > p {
+  max-width: 450px;
+
+  margin: 0;
+
+  padding-bottom: 5px;
+
+  color: #969696;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   CARRUSEL HORIZONTAL
+========================================================= */
+
+.marcasSeccion__grid {
+  width: 100%;
+  max-width: 1700px;
+
+  display: flex;
+
+  gap: 14px;
+
+  margin: 0 auto;
+
+  padding:
+    10px
+    4px
+    24px;
+
+  overflow-x: auto;
+  overflow-y: visible;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  overscroll-behavior-x: contain;
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(239, 45, 52, 0.55)
+    rgba(255, 255, 255, 0.04);
+}
+
+
+.marcasSeccion__grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+
+.marcasSeccion__grid::-webkit-scrollbar-track {
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border-radius: 999px;
+}
+
+
+.marcasSeccion__grid::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(239, 45, 52, 0.65),
+      rgba(239, 45, 52, 0.9)
+    );
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   TARJETA MARCA
+========================================================= */
+
+.marcaCard {
+  position: relative;
+
+  flex:
+    0
+    0
+    clamp(
+      190px,
+      14.5vw,
+      225px
+    );
+
+  min-width:
+    clamp(
+      190px,
+      14.5vw,
+      225px
+    );
+
+  height: 238px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  padding:
+    21px
+    13px
+    16px;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      150deg,
+      #191919 0%,
+      #121212 52%,
+      #0d0d0d 100%
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  isolation: isolate;
+
+  scroll-snap-align: start;
+
+  box-shadow:
+    inset
+    0 1px 0
+    rgba(255, 255, 255, 0.02);
+
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease,
+    opacity 260ms ease;
+}
+
+
+/* =========================================================
+   ATENUAR LAS DEMÁS CUANDO HAY HOVER
+========================================================= */
+
+@media (hover: hover) {
+
+  .marcasSeccion__grid:hover
+  .marcaCard:not(:hover) {
+    opacity: 0.72;
+
+    transform:
+      scale(0.985);
+  }
+
+}
+
+
+/* =========================================================
+   RESPLANDOR SUPERIOR
+========================================================= */
+
+.marcaCard::before {
+  content: '';
+
+  position: absolute;
+  z-index: -1;
+
+  width: 180px;
+  height: 180px;
+
+  top: -108px;
+  right: -88px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(239, 45, 52, 0.18) 0%,
+      rgba(239, 45, 52, 0.06) 45%,
+      transparent 72%
+    );
+
+  transition:
+    transform 350ms ease,
+    opacity 350ms ease;
+}
+
+
+/* =========================================================
+   LÍNEA INFERIOR
+========================================================= */
+
+.marcaCard::after {
+  content: '';
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 3px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    4px
+    4px
+    0
+    0;
+
+  background:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+
+  box-shadow:
+    0 0 18px
+    rgba(239, 45, 52, 0.6);
+
+  transition:
+    width 280ms ease;
+}
+
+
+.marcaCard:hover,
+.marcaCard:focus-visible {
+  z-index: 5;
+
+  transform:
+    translateY(-7px)
+    scale(1.035);
+
+  opacity: 1;
+
+  border-color:
+    rgba(239, 45, 52, 0.7);
+
+  background:
+    linear-gradient(
+      150deg,
+      #211717 0%,
+      #141111 55%,
+      #0d0d0d 100%
+    );
+
+  box-shadow:
+    0 22px 42px
+    rgba(0, 0, 0, 0.48),
+    0 0 26px
+    rgba(239, 45, 52, 0.1);
+
+  outline: none;
+}
+
+
+.marcaCard:hover::before,
+.marcaCard:focus-visible::before {
+  transform:
+    scale(1.45);
+}
+
+
+.marcaCard:hover::after,
+.marcaCard:focus-visible::after {
+  width: 70%;
+}
+
+
+/* =========================================================
+   NÚMERO
+========================================================= */
+
+.marcaCard__numero {
+  position: absolute;
+
+  top: 11px;
+  left: 12px;
+
+  z-index: 3;
+
+  color:
+    rgba(255, 255, 255, 0.11);
+
+  font-size: 25px;
+  font-weight: 950;
+
+  line-height: 1;
+
+  pointer-events: none;
+
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+
+.marcaCard:hover
+.marcaCard__numero,
+.marcaCard:focus-visible
+.marcaCard__numero {
+  color:
+    rgba(239, 45, 52, 0.35);
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   CONTENEDOR LOGO
+========================================================= */
+
+.marcaCard__logo {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 10px;
+  margin-bottom: 2px;
+
+  padding:
+    8px
+    7px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGEN LOGO
+========================================================= */
+
+.marcaCard__logo img {
+  width: 100%;
+  height: 100%;
+
+  max-width: 155px;
+  max-height: 82px;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  filter:
+    drop-shadow(
+      0 7px 12px
+      rgba(0, 0, 0, 0.38)
+    );
+
+  transform:
+    scale(0.93);
+
+  transition:
+    transform 280ms ease,
+    filter 280ms ease;
+}
+
+
+.marcaCard:hover
+.marcaCard__logo img,
+.marcaCard:focus-visible
+.marcaCard__logo img {
+  transform:
+    translateY(-2px)
+    scale(1.06);
+
+  filter:
+    drop-shadow(
+      0 8px 16px
+      rgba(0, 0, 0, 0.5)
+    )
+    drop-shadow(
+      0 0 12px
+      rgba(239, 45, 52, 0.18)
+    );
+}
+
+
+/* =========================================================
+   INFORMACIÓN TARJETA
+========================================================= */
+
+.marcaCard__contenido {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-top: 0;
+}
+
+
+.marcaCard__label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+
+  font-size: 7px;
+  font-weight: 950;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+.marcaCard__contenido h3 {
+  width: 100%;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 950;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.02em;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  text-transform: uppercase;
+}
+
+
+.marcaCard__contenido p {
+  margin:
+    5px
+    0
+    0;
+
+  color: #929292;
+
+  font-size: 10px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   FOOTER TARJETA
+========================================================= */
+
+.marcaCard__footer {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin-top: auto;
+
+  padding-top: 11px;
+
+  color: #d0d0d0;
+
+  font-size: 8px;
+  font-weight: 900;
+
+  letter-spacing: 0.06em;
+
+  transition:
+    color 230ms ease;
+}
+
+
+.marcaCard__footer svg {
+  width: 16px;
+  height: 16px;
+
+  flex-shrink: 0;
+
+  transition:
+    transform 230ms ease;
+}
+
+
+.marcaCard:hover
+.marcaCard__footer,
+.marcaCard:focus-visible
+.marcaCard__footer {
+  color:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+}
+
+
+.marcaCard:hover
+.marcaCard__footer svg,
+.marcaCard:focus-visible
+.marcaCard__footer svg {
+  transform:
+    translateX(4px);
+}
+
+
+/* =========================================================
+   DETALLE DE MARCA
+========================================================= */
+
+.marcaDetalleHero {
+  position: relative;
+
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+
+  padding:
+    60px
+    clamp(30px, 5vw, 90px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 78% 50%,
+      rgba(239, 45, 52, 0.25),
+      transparent 30%
+    ),
+    linear-gradient(
+      115deg,
+      #111,
+      #090909
+    );
+
+  border-bottom:
+    1px solid
+    #242424;
+}
+
+
+.marcaDetalleHero__fondoTexto {
+  position: absolute;
+
+  right: -40px;
+  bottom: -30px;
+
+  color:
+    rgba(255, 255, 255, 0.018);
+
+  font-size:
+    clamp(
+      130px,
+      18vw,
+      320px
+    );
+
+  font-weight: 950;
+
+  line-height: 0.8;
+
+  text-transform: uppercase;
+
+  pointer-events: none;
+}
+
+
+.marcaDetalleHero__contenido {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+}
+
+
+/* =========================================================
+   VOLVER
+========================================================= */
+
+.marcaDetalleHero__volver {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 30px;
+
+  padding: 0;
+
+  color: #a4a4a4;
+
+  background: none;
+  border: none;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    color 180ms ease;
+}
+
+
+.marcaDetalleHero__volver:hover {
+  color:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+}
+
+
+/* =========================================================
+   BADGE DETALLE
+========================================================= */
+
+.marcaDetalleHero__badge {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+
+  color:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   LOGO DETALLE
+========================================================= */
+
+.marcaDetalleHero__logo {
+  width: 210px;
+  height: 105px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-bottom: 20px;
+}
+
+
+.marcaDetalleHero__logo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: left center;
+}
+
+
+/* =========================================================
+   TITULAR DETALLE
+========================================================= */
+
+.marcaDetalleHero h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      64px,
+      10vw,
+      150px
+    );
+
+  font-weight: 950;
+
+  line-height: 0.8;
+
+  letter-spacing: -0.06em;
+
+  text-transform: uppercase;
+}
+
+
+.marcaDetalleHero__contenido > p {
+  margin:
+    32px
+    0
+    0;
+
+  color: #aaa;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   CONTADOR DETALLE
+========================================================= */
+
+.marcaDetalleHero__contador {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 36px;
+}
+
+
+.marcaDetalleHero__contador strong {
+  color:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+
+  font-size: 34px;
+  font-weight: 950;
+}
+
+
+.marcaDetalleHero__contador span {
+  max-width: 120px;
+
+  color: #777;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  line-height: 1.3;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   PRODUCTOS
+========================================================= */
+
+.marcaProductos {
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding:
+    70px
+    40px
+    100px;
+}
+
+
+.marcaProductos__encabezado {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 30px;
+}
+
+
+.marcaProductos__encabezado span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.2em;
+}
+
+
+.marcaProductos__encabezado h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      34px,
+      4vw,
+      54px
+    );
+
+  font-weight: 950;
+
+  text-transform: uppercase;
+}
+
+
+.marcaProductos__encabezado > p {
+  margin: 0;
+
+  color: #8e8e8e;
+
+  font-size: 14px;
+}
+
+
+.marcaProductos__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   ESTADOS
+========================================================= */
+
+.marcas__estado {
+  max-width: 680px;
+
+  margin:
+    70px
+    auto;
+
+  padding:
+    50px
+    30px;
+
+  text-align: center;
+
+  background: #151515;
+
+  border:
+    1px solid
+    #292929;
+
+  border-radius: 14px;
+}
+
+
+.marcas__estado h2 {
+  margin:
+    0
+    0
+    10px;
+
+  color: #ffffff;
+
+  font-size: 26px;
+  font-weight: 900;
+}
+
+
+.marcas__estado p {
+  margin: 0;
+
+  color: #8f8f8f;
+}
+
+
+.marcas__estadoBoton {
+  margin-top: 22px;
+
+  padding:
+    13px
+    22px;
+
+  color: #ffffff;
+
+  background:
+    var(
+      --color-rojo,
+      #ef2d34
+    );
+
+  border: none;
+  border-radius: 6px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .marcasHero {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding-top: 60px;
+    padding-bottom: 42px;
+  }
+
+
+  .marcasHero__contenido {
+    max-width: 760px;
+  }
+
+
+  .marcasHero__visual {
+    min-height: auto;
+
+    margin-top: 24px;
+  }
+
+
+  .marcasHero__imagenWrapper {
+    width: 100%;
+    max-width: 700px;
+
+    margin:
+      0
+      auto;
+  }
+
+
+  .marcasHero__imagen {
+    max-width: 700px;
+  }
+
+
+  .marcaProductos__grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+  }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .marcasHero {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding:
+      52px
+      18px
+      35px;
+  }
+
+
+  .marcasHero__badge {
+    margin-bottom: 20px;
+
+    padding:
+      8px
+      13px;
+
+    font-size: 9px;
+  }
+
+
+  .marcasHero h1 {
+    font-size:
+      clamp(
+        44px,
+        15vw,
+        70px
+      );
+
+    line-height: 0.9;
+  }
+
+
+  .marcasHero__contenido > p {
+    max-width: 520px;
+
+    margin-top: 22px;
+
+    font-size: 14px;
+  }
+
+
+  .marcasHero__visual {
+    min-height: 300px;
+
+    margin-top: 12px;
+  }
+
+
+  .marcasHero__imagenWrapper {
+    width: 108%;
+    max-width: 590px;
+
+    margin-left: -4%;
+    margin-right: 0;
+  }
+
+
+  .marcasHero__imagen {
+    max-width: 590px;
+  }
+
+
+  .marcasSeccion {
+    padding:
+      48px
+      0
+      72px;
+  }
+
+
+  .marcasSeccion__encabezado {
+    display: block;
+
+    padding:
+      0
+      16px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .marcasSeccion__encabezado h2 {
+    font-size:
+      clamp(
+        37px,
+        11vw,
+        54px
+      );
+  }
+
+
+  .marcasSeccion__encabezado > p {
+    max-width: 520px;
+
+    margin-top: 13px;
+
+    padding-bottom: 0;
+
+    text-align: left;
+
+    font-size: 13px;
+  }
+
+
+  .marcasSeccion__grid {
+    padding:
+      8px
+      16px
+      20px;
+
+    gap: 11px;
+
+    scroll-padding-left: 16px;
+  }
+
+
+  .marcaCard {
+    flex:
+      0
+      0
+      190px;
+
+    min-width: 190px;
+
+    height: 220px;
+
+    padding:
+      18px
+      10px
+      14px;
+
+    border-radius: 12px;
+  }
+
+
+  .marcaCard__numero {
+    top: 10px;
+    left: 11px;
+
+    font-size: 22px;
+  }
+
+
+  .marcaCard__logo {
+    height: 88px;
+
+    margin-top: 8px;
+  }
+
+
+  .marcaCard__logo img {
+    max-width: 135px;
+    max-height: 70px;
+  }
+
+
+  .marcaCard__contenido h3 {
+    font-size: 14px;
+  }
+
+
+  .marcaCard__contenido p {
+    font-size: 9px;
+  }
+
+
+  .marcaDetalleHero {
+    min-height: 420px;
+
+    padding:
+      50px
+      20px;
+  }
+
+
+  .marcaDetalleHero h1 {
+    font-size:
+      clamp(
+        58px,
+        17vw,
+        100px
+      );
+  }
+
+
+  .marcaDetalleHero__logo {
+    width: 170px;
+    height: 85px;
+  }
+
+
+  .marcaProductos {
+    padding:
+      55px
+      16px
+      80px;
+  }
+
+
+  .marcaProductos__encabezado {
+    display: block;
+  }
+
+
+  .marcaProductos__encabezado > p {
+    margin-top: 10px;
+  }
+
+
+  .marcaProductos__grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap:
+      18px
+      12px;
+  }
+
+}
+
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .marcasHero {
+    padding:
+      45px
+      14px
+      28px;
+  }
+
+
+  .marcasHero h1 {
+    font-size:
+      clamp(
+        40px,
+        14vw,
+        58px
+      );
+  }
+
+
+  .marcasHero__contenido > p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+
+  .marcasHero__visual {
+    min-height: 240px;
+  }
+
+
+  .marcasHero__imagenWrapper {
+    width: 114%;
+    max-width: 500px;
+
+    margin-left: -7%;
+  }
+
+
+  .marcasHero__imagen {
+    max-width: 100%;
+  }
+
+
+  .marcasHero__resplandor {
+    width: 95%;
+    height: 75%;
+  }
+
+
+  .marcasSeccion {
+    padding-top: 42px;
+  }
+
+
+  .marcasSeccion__encabezado {
+    padding:
+      0
+      13px;
+  }
+
+
+  .marcasSeccion__encabezado h2 {
+    font-size:
+      clamp(
+        34px,
+        11vw,
+        44px
+      );
+  }
+
+
+  .marcasSeccion__eyebrow {
+    font-size: 10px;
+  }
+
+
+  .marcasSeccion__grid {
+    gap: 9px;
+
+    padding:
+      8px
+      13px
+      18px;
+
+    scroll-padding-left: 13px;
+  }
+
+
+  .marcaCard {
+    flex:
+      0
+      0
+      164px;
+
+    min-width: 164px;
+
+    height: 202px;
+
+    padding:
+      15px
+      8px
+      12px;
+  }
+
+
+  .marcaCard__numero {
+    top: 8px;
+    left: 9px;
+
+    font-size: 19px;
+  }
+
+
+  .marcaCard__logo {
+    height: 77px;
+
+    margin-top: 7px;
+
+    padding: 6px;
+  }
+
+
+  .marcaCard__logo img {
+    max-width: 116px;
+    max-height: 60px;
+  }
+
+
+  .marcaCard__label {
+    font-size: 6px;
+  }
+
+
+  .marcaCard__contenido h3 {
+    font-size: 12px;
+  }
+
+
+  .marcaCard__contenido p {
+    font-size: 8px;
+  }
+
+
+  .marcaCard__footer {
+    gap: 4px;
+
+    padding-top: 8px;
+
+    font-size: 7px;
+  }
+
+
+  .marcaCard__footer svg {
+    width: 13px;
+    height: 13px;
+  }
+
+
+  .marcaProductos__grid {
+    gap:
+      16px
+      10px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .marcasHero__imagen,
+  .marcasHero__resplandor,
+  .marcasSeccion__eyebrow::after {
+    animation: none;
+  }
+
+
+  .marcaCard,
+  .marcaCard__logo img,
+  .marcaCard__footer svg,
+  .marcasSeccion__grid {
+    transition: none;
+    scroll-behavior: auto;
+  }
+
+}

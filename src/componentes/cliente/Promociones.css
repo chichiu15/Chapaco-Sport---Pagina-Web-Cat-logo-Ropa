@@ -1,0 +1,300 @@
+.seccionPacks {
+  padding: 72px max(5vw, 24px);
+  background: #0b0b0b;
+  color: #fff;
+  border-top: 1px solid #202020;
+}
+
+.seccionPacks__anuncio {
+  max-width: 1200px;
+  margin: 0 auto 32px;
+  padding: 0 0 30px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 36px;
+  border-bottom: 1px solid #313131;
+}
+
+.seccionPacks__anuncioTexto { max-width: 760px; }
+.seccionPacks__anuncio span,
+.promocionesPagina__hero span,
+.tarjetaPack__etiqueta,
+.tarjetaPack__condicionesTexto > span,
+.tarjetaPack__productos > header span {
+  color: #ed2d34;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .18em;
+}
+
+.seccionPacks__anuncio h2 {
+  margin: 8px 0 10px;
+  font-size: clamp(2rem, 4.7vw, 3.8rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+  text-transform: uppercase;
+}
+
+.seccionPacks__anuncio p {
+  max-width: 680px;
+  margin: 0;
+  color: #aaa;
+  line-height: 1.65;
+}
+
+.seccionPacks__anuncio > a,
+.tarjetaPack__compactaContenido > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 900;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.seccionPacks__anuncio > a {
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid #fff;
+}
+
+.seccionPacks__anuncio > a:hover { background: #fff; color: #0b0b0b; }
+
+.seccionPacks__grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #2c2c2c;
+  border-left: 1px solid #2c2c2c;
+}
+
+.tarjetaPack { scroll-margin-top: 110px; color: #fff; }
+
+.tarjetaPack--compacta {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 17px;
+  padding: 26px 24px 28px;
+  background: #111;
+  border-right: 1px solid #2c2c2c;
+  border-bottom: 1px solid #2c2c2c;
+  transition: background .2s ease;
+}
+
+.tarjetaPack--compacta:hover { background: #171717; }
+
+.tarjetaPack__numero {
+  color: #ed2d34;
+  font-size: 1.5rem;
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -.06em;
+}
+
+.tarjetaPack__compactaContenido { min-width: 0; display: flex; flex-direction: column; }
+.tarjetaPack--compacta h3 {
+  margin: 9px 0 10px;
+  font-size: 1.3rem;
+  line-height: 1.08;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.tarjetaPack__resumen { color: #fff; font-size: 1rem; }
+.tarjetaPack--compacta p {
+  flex: 1;
+  margin: 11px 0 24px;
+  color: #999;
+  line-height: 1.55;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.tarjetaPack__compactaContenido > a { justify-content: flex-start; width: max-content; color: #ed2d34; }
+
+.promocionesPagina {
+  min-height: 70vh;
+  padding: 76px max(5vw, 24px) 90px;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.promocionesPagina__hero {
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #303030;
+}
+
+.promocionesPagina__hero h1 {
+  max-width: 900px;
+  margin: 10px 0 14px;
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  line-height: .9;
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+}
+
+.promocionesPagina__hero p { max-width: 720px; margin: 0; color: #aaa; font-size: 1rem; line-height: 1.7; }
+.promocionesPagina__grid { max-width: 1200px; margin: auto; display: grid; gap: 22px; }
+
+.tarjetaPack--detalle {
+  overflow: hidden;
+  background: #121212;
+  border: 1px solid #303030;
+  border-top: 3px solid #ed2d34;
+}
+
+.tarjetaPack__cabecera {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) minmax(260px, 340px);
+  gap: 24px;
+  align-items: start;
+  padding: 32px;
+}
+
+.tarjetaPack__identidad { min-width: 0; }
+.tarjetaPack__identidad h2 {
+  margin: 7px 0 13px;
+  font-size: clamp(1.65rem, 4vw, 2.5rem);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.tarjetaPack__descripcion {
+  max-width: 720px;
+  margin: 0;
+  color: #aaa;
+  line-height: 1.65;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.tarjetaPack__beneficio {
+  padding-left: 24px;
+  border-left: 1px solid #343434;
+}
+.tarjetaPack__beneficio > span { display: block; color: #888; font-size: .65rem; font-weight: 900; letter-spacing: .15em; }
+.tarjetaPack__beneficio strong { display: block; margin: 8px 0; color: #ed2d34; font-size: clamp(1.35rem, 3vw, 2rem); line-height: 1.1; }
+.tarjetaPack__beneficio small { color: #8d8d8d; line-height: 1.4; }
+
+.tarjetaPack__condiciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 32px;
+  background: #181818;
+  border-block: 1px solid #2e2e2e;
+}
+.tarjetaPack__condicionesTexto p { margin: 5px 0 0; color: #bbb; font-size: .82rem; line-height: 1.5; }
+.tarjetaPack__vigencia { display: flex; align-items: center; gap: 7px; flex: 0 0 auto; color: #888; font-size: .76rem; }
+
+.tarjetaPack__accionesPublicas { display: flex; flex-wrap: wrap; gap: 10px; padding: 22px 32px 26px; }
+.tarjetaPack__accionesPublicas > button,
+.tarjetaPack__accionesPublicas > a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 16px;
+  font-size: .78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: .025em;
+  cursor: pointer;
+}
+.tarjetaPack__accionesPublicas > button { border: 1px solid #ed2d34; background: #ed2d34; color: #fff; }
+.tarjetaPack__accionesPublicas > button:hover { background: #cf2027; border-color: #cf2027; }
+.tarjetaPack__accionesPublicas > a { border: 1px solid #444; color: #fff; }
+.tarjetaPack__accionesPublicas > a:hover { border-color: #fff; }
+.tarjetaPack__accionesPublicas svg { transition: transform .2s ease; }
+.tarjetaPack__accionesPublicas .girado { transform: rotate(180deg); }
+
+.tarjetaPack__productos {
+  padding: 32px;
+  background: #0e0e0e;
+  border-top: 1px solid #303030;
+}
+.tarjetaPack__productos > header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.tarjetaPack__productos > header h3 { margin: 5px 0 6px; font-size: 1.55rem; }
+.tarjetaPack__productos > header p { max-width: 680px; margin: 0; color: #8f8f8f; line-height: 1.55; }
+.tarjetaPack__productos > header label {
+  min-width: min(310px, 100%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  background: #171717;
+  border: 1px solid #393939;
+}
+.tarjetaPack__productos > header input { width: 100%; padding: 12px 0; border: 0; outline: 0; background: transparent; color: #fff; }
+.tarjetaPack__productosGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+
+.productoPack {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  min-height: 142px;
+  background: #171717;
+  border: 1px solid #292929;
+}
+.productoPack__imagen { display: block; overflow: hidden; background: #222; color: #777; text-decoration: none; }
+.productoPack__imagen img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .25s ease; }
+.productoPack:hover .productoPack__imagen img { transform: scale(1.035); }
+.productoPack__imagen > span { height: 100%; display: grid; place-items: center; padding: 12px; font-size: .55rem; font-weight: 900; text-align: center; }
+.productoPack__contenido { min-width: 0; display: flex; flex-direction: column; padding: 16px; }
+.productoPack__meta { margin: 0; color: #777; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.productoPack h4 { margin: 7px 0 14px; font-size: 1rem; line-height: 1.25; overflow-wrap: anywhere; }
+.productoPack__pie { margin-top: auto; display: flex; align-items: end; justify-content: space-between; gap: 12px; }
+.productoPack__precio { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; }
+.productoPack__precio strong { color: #fff; }
+.productoPack__precio del { color: #707070; font-size: .72rem; }
+.productoPack__pie > a { display: inline-flex; align-items: center; gap: 5px; color: #ed2d34; font-size: .74rem; font-weight: 900; text-decoration: none; text-transform: uppercase; }
+.tarjetaPack__verMas { display: block; margin: 24px auto 0; padding: 10px 18px; border: 1px solid #555; background: transparent; color: #fff; font-weight: 800; cursor: pointer; }
+.tarjetaPack__sinProductos { padding: 32px; border: 1px dashed #3c3c3c; color: #999; text-align: center; }
+.promocionesPagina__vacio { max-width: 760px; margin: auto; padding: 55px; border: 1px solid #333; text-align: center; }
+.promocionesPagina__nota { max-width: 780px; margin: 35px auto 0; padding: 16px; border-left: 2px solid #ed2d34; background: #151515; color: #999; text-align: center; }
+
+@media (max-width: 950px) {
+  .seccionPacks__grid { grid-template-columns: 1fr; }
+  .tarjetaPack__cabecera { grid-template-columns: 50px 1fr; }
+  .tarjetaPack__beneficio { grid-column: 2; padding: 20px 0 0; border-left: 0; border-top: 1px solid #343434; }
+}
+
+@media (max-width: 700px) {
+  .seccionPacks { padding-block: 50px; }
+  .seccionPacks__anuncio { align-items: flex-start; flex-direction: column; gap: 22px; }
+  .promocionesPagina { padding-top: 54px; }
+  .promocionesPagina__hero { margin-bottom: 32px; }
+  .tarjetaPack__cabecera { grid-template-columns: 1fr; gap: 12px; padding: 24px 20px; }
+  .tarjetaPack__beneficio { grid-column: 1; }
+  .tarjetaPack__condiciones { align-items: flex-start; flex-direction: column; padding-inline: 20px; }
+  .tarjetaPack__accionesPublicas { display: grid; padding-inline: 20px; }
+  .tarjetaPack__productos { padding: 25px 20px; }
+  .tarjetaPack__productos > header { align-items: stretch; flex-direction: column; }
+  .tarjetaPack__productosGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 430px) {
+  .tarjetaPack--compacta { grid-template-columns: 38px 1fr; padding: 22px 18px; }
+  .productoPack { grid-template-columns: 92px minmax(0, 1fr); }
+  .productoPack__contenido { padding: 13px; }
+  .productoPack__pie { align-items: flex-start; flex-direction: column; }
+}

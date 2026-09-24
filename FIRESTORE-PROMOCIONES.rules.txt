@@ -1,0 +1,17 @@
+// Agregar estos bloques DENTRO de: match /databases/{database}/documents { ... }
+// Conserva las reglas existentes del proyecto. No reemplaces todo el archivo por este fragmento.
+
+match /packs_ofertas/{packId} {
+  // El cliente necesita leer los packs activos. La interfaz filtra estado y vigencia.
+  allow read: if true;
+
+  // El panel administrativo ya exige inicio de sesión y permiso de promociones.
+  allow create, update, delete: if request.auth != null;
+}
+
+match /codigos_descuento/{codigoId} {
+  // El cliente solo consulta un código exacto; no puede descargar la lista completa.
+  allow get: if true;
+  allow list: if request.auth != null;
+  allow create, update, delete: if request.auth != null;
+}

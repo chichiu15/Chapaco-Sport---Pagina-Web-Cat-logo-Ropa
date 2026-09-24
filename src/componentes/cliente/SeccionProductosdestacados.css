@@ -1,0 +1,66 @@
+.seccionProductos {
+  padding-block: var(--espacio-xl);
+}
+
+.seccionProductos__cabecera {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--espacio-sm);
+  margin-bottom: var(--espacio-lg);
+}
+
+.seccionProductos__titulo {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--color-blanco);
+  letter-spacing: -0.01em;
+}
+
+.seccionProductos__subtitulo {
+  margin-top: 4px;
+  font-size: var(--tamano-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-rojo);
+}
+
+.seccionProductos__verTodos {
+  flex-shrink: 0;
+  font-size: var(--tamano-xs);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-texto-mudo-claro);
+  white-space: nowrap;
+  padding-bottom: 4px;
+  transition: color var(--transicion-rapida);
+}
+
+.seccionProductos__verTodos:hover {
+  color: var(--color-rojo);
+}
+
+.seccionProductos__error {
+  color: var(--color-texto-mudo);
+  font-size: var(--tamano-sm);
+}
+
+.seccionProductos__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--espacio-md);
+}
+
+@media (max-width: 900px) {
+  .seccionProductos__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .seccionProductos__cabecera {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--espacio-xs);
+  }
+}

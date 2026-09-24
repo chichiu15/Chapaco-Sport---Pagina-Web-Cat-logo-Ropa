@@ -1,0 +1,58 @@
+/* src/estilos/variables.css
+   Tokens de diseño de Chapaco Sport. Cualquier color, tipografía o espaciado
+   nuevo que necesiten, se agrega ACÁ, nunca hardcodeado en un componente. */
+
+:root {
+  /* ---- Colores ---- */
+  --color-fondo: #0d0d0d;          /* negro principal (header, secciones oscuras) */
+  --color-fondo-footer: #0a0a0a;   /* negro del pie de página, un pelín más oscuro */
+  --color-superficie: #1a1a1a;     /* tarjetas, inputs */
+  --color-superficie-hover: #232323;
+  --color-borde: #2a2a2a;
+
+  --color-rojo: #e4292f;           /* rojo de marca (botón CHATEAR, acentos) */
+  --color-rojo-hover: #c01822;
+  --color-rojo-suave: rgba(228, 41, 47, 0.15);
+
+  --color-blanco: #ffffff;
+  --color-texto-mudo: #9a9a9a;     /* texto secundario sobre fondo oscuro */
+  --color-texto-mudo-claro: #c9c9c9;
+
+  /* Header transparente al hacer scroll */
+  --color-header-scroll: rgba(20, 20, 20, 0.75);
+
+  /* ---- Tipografía ---- */
+  --fuente-base: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --tamano-xs: 0.75rem;   /* 12px */
+  --tamano-sm: 0.875rem;  /* 14px */
+  --tamano-base: 1rem;    /* 16px */
+  --tamano-md: 1.125rem;  /* 18px */
+  --tamano-lg: 1.5rem;    /* 24px */
+  --tamano-xl: 2.25rem;   /* 36px */
+  --tamano-2xl: 3.5rem;   /* 56px */
+
+  /* ---- Espaciados ---- */
+  --espacio-xs: 0.5rem;
+  --espacio-sm: 1rem;
+  --espacio-md: 1.5rem;
+  --espacio-lg: 2.5rem;
+  --espacio-xl: 4rem;
+
+  /* ---- Layout ---- */
+  --ancho-maximo: 1850px;
+  --alto-header: 76px;
+  --alto-header-scroll: 64px;
+  --alto-ticker: 34px;
+  --radio-borde: 8px;
+  --radio-borde-sm: 4px;
+
+  /* ---- Transiciones ---- */
+  --transicion-rapida: 180ms ease;
+  --transicion-base: 280ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- Capas (z-index) ---- */
+  --z-header: 100;
+  --z-menu-movil: 90;
+  --z-modal: 200;
+}

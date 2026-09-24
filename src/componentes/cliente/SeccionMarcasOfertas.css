@@ -1,0 +1,304 @@
+.seccionMarcasOfertas {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 2px;
+  margin-top: 2px;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   BANNER
+===================================================== */
+
+.seccionMarcasOfertas__banner {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: clamp(220px, 32vw, 340px);
+
+  overflow: hidden;
+
+  background-color: #111111;
+
+  text-decoration: none;
+
+  /*
+    Mantiene imagen, overlay y contenido
+    dentro de cada banner.
+  */
+  isolation: isolate;
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.seccionMarcasOfertas__imagen {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: 0;
+
+  transition:
+    transform 500ms ease;
+
+  backface-visibility: hidden;
+}
+
+
+.seccionMarcasOfertas__banner:hover
+.seccionMarcasOfertas__imagen {
+  transform: scale(1.045);
+}
+
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.seccionMarcasOfertas__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(13, 13, 13, 0.88) 0%,
+      rgba(13, 13, 13, 0.45) 38%,
+      rgba(13, 13, 13, 0.12) 75%
+    );
+
+  transition:
+    background 300ms ease;
+}
+
+
+.seccionMarcasOfertas__banner:hover
+.seccionMarcasOfertas__overlay {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(13, 13, 13, 0.94) 0%,
+      rgba(13, 13, 13, 0.52) 38%,
+      rgba(13, 13, 13, 0.18) 75%
+    );
+}
+
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+
+.seccionMarcasOfertas__contenido {
+  position: absolute;
+
+  left: clamp(16px, 2.5vw, 40px);
+  right: clamp(16px, 2.5vw, 40px);
+  bottom: clamp(16px, 2.5vw, 32px);
+
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  pointer-events: none;
+}
+
+
+.seccionMarcasOfertas__titulo {
+  margin: 0;
+
+  max-width: 100%;
+
+  color: var(--color-blanco);
+
+  font-size:
+    clamp(
+      1.65rem,
+      3.5vw,
+      2.5rem
+    );
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.01em;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.seccionMarcasOfertas__boton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 12px;
+
+  min-height: 38px;
+
+  padding: 9px 20px;
+
+  background-color:
+    var(--color-rojo);
+
+  color:
+    var(--color-blanco);
+
+  border-radius:
+    var(--radio-borde-sm);
+
+  font-size:
+    var(--tamano-xs);
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.05em;
+
+  transition:
+    background-color var(--transicion-rapida),
+    transform var(--transicion-rapida);
+}
+
+
+.seccionMarcasOfertas__banner:hover
+.seccionMarcasOfertas__boton {
+  background-color:
+    var(--color-rojo-hover);
+
+  transform:
+    translateX(4px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .seccionMarcasOfertas__banner {
+    height:
+      clamp(
+        220px,
+        38vw,
+        300px
+      );
+  }
+
+
+  .seccionMarcasOfertas__titulo {
+    font-size:
+      clamp(
+        1.5rem,
+        4vw,
+        2rem
+      );
+  }
+
+}
+
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (max-width: 640px) {
+
+  .seccionMarcasOfertas {
+    grid-template-columns: 1fr;
+
+    gap: 2px;
+  }
+
+
+  .seccionMarcasOfertas__banner {
+    height:
+      clamp(
+        220px,
+        62vw,
+        300px
+      );
+  }
+
+
+  .seccionMarcasOfertas__contenido {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+
+  .seccionMarcasOfertas__titulo {
+    font-size:
+      clamp(
+        1.65rem,
+        8vw,
+        2.15rem
+      );
+  }
+
+
+  .seccionMarcasOfertas__boton {
+    min-height: 40px;
+
+    padding:
+      10px 20px;
+  }
+
+}
+
+
+/* =====================================================
+   MÓVILES PEQUEÑOS
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .seccionMarcasOfertas__banner {
+    height: 220px;
+  }
+
+
+  .seccionMarcasOfertas__contenido {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+
+  .seccionMarcasOfertas__titulo {
+    font-size: 1.55rem;
+  }
+
+}

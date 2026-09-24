@@ -1,0 +1,564 @@
+/* =========================================================
+   GALERÍA DE PRODUCTO
+   Inspirada visualmente en CarruselHero
+========================================================= */
+
+.galeriaProducto {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* VISOR */
+
+.galeriaProducto__visor {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  max-height: 650px;
+
+  overflow: hidden;
+
+  background: #111111;
+
+  border: 1px solid #202020;
+  border-radius: 12px;
+}
+
+
+/* DIAPOSITIVAS */
+
+.galeriaProducto__diapositiva {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  background: #111111;
+
+  border: 0;
+
+  opacity: 0;
+
+  cursor: zoom-in;
+
+  pointer-events: none;
+
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+
+.galeriaProducto__diapositiva--activa {
+  opacity: 1;
+
+  pointer-events: auto;
+}
+
+
+.galeriaProducto__imagen {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  /*
+    LA IMAGEN SIEMPRE ES VISIBLE.
+  */
+  opacity: 1;
+
+  transform: none;
+
+  backface-visibility: hidden;
+}
+
+
+/* FLECHAS - MISMO LENGUAJE QUE CARRUSEL HERO */
+
+.galeriaProducto__flecha {
+  position: absolute;
+  top: 50%;
+
+  z-index: 5;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border-radius: 999px;
+
+  background-color: rgba(13, 13, 13, 0.55);
+  color: var(--color-blanco, #ffffff);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(5px);
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+
+.galeriaProducto__flecha:hover {
+  background-color:
+    var(--color-rojo, #e10600);
+
+  border-color:
+    var(--color-rojo, #e10600);
+}
+
+
+.galeriaProducto__flecha--izquierda {
+  left: 16px;
+}
+
+
+.galeriaProducto__flecha--derecha {
+  right: 16px;
+}
+
+
+/* PUNTOS */
+
+.galeriaProducto__puntos {
+  position: absolute;
+
+  z-index: 6;
+
+  bottom: 18px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 8px;
+}
+
+
+.galeriaProducto__punto {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  transition:
+    width 180ms ease,
+    background-color 180ms ease;
+}
+
+
+.galeriaProducto__punto:hover {
+  background:
+    rgba(255, 255, 255, 0.8);
+}
+
+
+.galeriaProducto__punto--activo {
+  width: 26px;
+
+  background-color:
+    var(--color-rojo, #e10600);
+}
+
+
+/* BOTÓN AMPLIAR */
+
+.galeriaProducto__ampliar {
+  position: absolute;
+
+  z-index: 7;
+
+  right: 14px;
+  bottom: 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 8px 11px;
+
+  background:
+    rgba(10, 10, 10, 0.72);
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.2);
+
+  border-radius: 6px;
+
+  backdrop-filter: blur(5px);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+
+.galeriaProducto__ampliar:hover {
+  background-color:
+    var(--color-rojo, #e10600);
+
+  border-color:
+    var(--color-rojo, #e10600);
+}
+
+
+/* MINIATURAS */
+
+.galeriaProducto__miniaturas {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 12px;
+
+  padding-bottom: 4px;
+
+  overflow-x: auto;
+}
+
+
+.galeriaProducto__miniatura {
+  flex: 0 0 70px;
+
+  width: 70px;
+  height: 84px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background: #111111;
+
+  border: 2px solid transparent;
+
+  border-radius: 6px;
+
+  opacity: 0.6;
+
+  cursor: pointer;
+
+  transition:
+    opacity 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+
+.galeriaProducto__miniatura:hover {
+  opacity: 1;
+
+  transform: translateY(-2px);
+}
+
+
+.galeriaProducto__miniatura--activa {
+  opacity: 1;
+
+  border-color:
+    var(--color-rojo, #e10600);
+}
+
+
+.galeriaProducto__miniatura img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* SIN IMÁGENES */
+
+.galeriaProducto--vacia {
+  min-height: 480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #111111;
+
+  border-radius: 12px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   ZOOM
+========================================================= */
+
+.galeriaProducto__zoom {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 90px;
+
+  background:
+    rgba(0, 0, 0, 0.96);
+
+  backdrop-filter: blur(6px);
+}
+
+
+.galeriaProducto__zoomImagen {
+  display: block;
+
+  max-width: 88vw;
+  max-height: 88vh;
+
+  object-fit: contain;
+
+  user-select: none;
+}
+
+
+.galeriaProducto__zoomCerrar {
+  position: absolute;
+
+  top: 22px;
+  right: 28px;
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  padding: 0;
+
+  border-radius: 999px;
+
+  background:
+    rgba(20, 20, 20, 0.75);
+
+  color: #ffffff;
+
+  border: 1px solid #444444;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+
+.galeriaProducto__zoomCerrar:hover {
+  background:
+    var(--color-rojo, #e10600);
+
+  border-color:
+    var(--color-rojo, #e10600);
+}
+
+
+.galeriaProducto__zoomFlecha {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 10;
+
+  transform: translateY(-50%);
+
+  width: 52px;
+  height: 52px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  background:
+    rgba(20, 20, 20, 0.65);
+
+  color: #ffffff;
+
+  border: 1px solid #444444;
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+
+.galeriaProducto__zoomFlecha:hover {
+  background:
+    var(--color-rojo, #e10600);
+
+  border-color:
+    var(--color-rojo, #e10600);
+}
+
+
+.galeriaProducto__zoomFlecha--izquierda {
+  left: 25px;
+}
+
+
+.galeriaProducto__zoomFlecha--derecha {
+  right: 25px;
+}
+
+
+.galeriaProducto__zoomContador {
+  position: absolute;
+
+  bottom: 22px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 7px 12px;
+
+  background:
+    rgba(20, 20, 20, 0.7);
+
+  color: #ffffff;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 640px) {
+
+  .galeriaProducto__visor {
+    border-radius: 8px;
+  }
+
+
+  .galeriaProducto__flecha {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .galeriaProducto__flecha--izquierda {
+    left: 8px;
+  }
+
+
+  .galeriaProducto__flecha--derecha {
+    right: 8px;
+  }
+
+
+  .galeriaProducto__miniatura {
+    flex-basis: 58px;
+
+    width: 58px;
+    height: 70px;
+  }
+
+
+  .galeriaProducto__ampliar span {
+    display: none;
+  }
+
+
+  .galeriaProducto__puntos {
+    bottom: 13px;
+  }
+
+
+  .galeriaProducto__zoom {
+    padding: 20px 10px;
+  }
+
+
+  .galeriaProducto__zoomImagen {
+    max-width: 96vw;
+    max-height: 82vh;
+  }
+
+
+  .galeriaProducto__zoomFlecha {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .galeriaProducto__zoomFlecha--izquierda {
+    left: 5px;
+  }
+
+
+  .galeriaProducto__zoomFlecha--derecha {
+    right: 5px;
+  }
+
+
+  .galeriaProducto__zoomCerrar {
+    top: 12px;
+    right: 12px;
+  }
+
+}

@@ -1,0 +1,1284 @@
+/* ======================================================
+   FOOTER GENERAL
+====================================================== */
+
+.pie {
+  position: relative;
+  overflow: visible;
+
+  padding-top: 1.7rem;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.01),
+      transparent 40%
+    ),
+    var(--color-fondo-footer);
+
+  border-top: 1px solid var(--color-borde);
+}
+
+
+/* ======================================================
+   GRID PRINCIPAL
+====================================================== */
+
+.pie__contenedor {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(230px, 1.1fr)
+    minmax(110px, 0.45fr)
+    minmax(210px, 0.72fr)
+    minmax(300px, 1.1fr);
+
+  align-items: start;
+
+  gap: 1.9rem;
+
+  padding-inline: 2rem;
+  padding-bottom: 1.15rem;
+}
+
+
+/* ======================================================
+   COLUMNAS
+====================================================== */
+
+.pie__columna {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.58rem;
+}
+
+
+/* ======================================================
+   MARCA
+====================================================== */
+
+.pie__marca {
+  align-items: flex-start;
+}
+
+
+.pie__marcaVisual {
+  width: 100%;
+  max-width: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  min-height: 78px;
+}
+
+
+.pie__logo {
+  width: auto;
+  height: 76px;
+  max-width: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: left center;
+
+  transition:
+    transform 0.22s ease,
+    filter 0.22s ease;
+}
+
+
+.pie__marcaVisual:hover .pie__logo {
+  transform: scale(1.018);
+
+  filter:
+    drop-shadow(
+      0 3px 8px
+      rgba(0, 0, 0, 0.22)
+    );
+}
+
+
+.pie__descripcion {
+  max-width: 390px;
+
+  margin: 0;
+
+  color:
+    var(--color-texto-mudo-claro);
+
+  font-size: 0.8rem;
+  line-height: 1.48;
+
+  text-align: left;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+
+/* ======================================================
+   TÍTULOS
+====================================================== */
+
+.pie__titulo {
+  position: relative;
+
+  width: fit-content;
+
+  margin: 0 0 0.2rem;
+
+  color: var(--color-blanco);
+
+  font-size: 0.78rem;
+  font-weight: 900;
+
+  letter-spacing: 0.065em;
+}
+
+
+.pie__titulo::after {
+  content: '';
+
+  display: block;
+
+  width: 21px;
+  height: 2px;
+
+  margin-top: 0.38rem;
+
+  border-radius: 999px;
+
+  background:
+    var(--color-rojo);
+}
+
+
+/* ======================================================
+   TIENDA
+====================================================== */
+
+.pie__lista {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.08rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.pie__enlace {
+  display: inline-flex;
+
+  width: fit-content;
+
+  padding: 0.24rem 0;
+
+  color:
+    var(--color-texto-mudo-claro);
+
+  font-size: 0.8rem;
+
+  text-decoration: none;
+
+  transition:
+    color var(--transicion-rapida),
+    transform var(--transicion-rapida);
+}
+
+
+.pie__enlace:hover {
+  color:
+    var(--color-rojo);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* ======================================================
+   SOCIAL DOCK
+====================================================== */
+
+.pie__redesColumna {
+  position: relative;
+}
+
+
+.pie__socialDock {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+
+  min-height: 46px;
+
+  padding-top: 0.1rem;
+}
+
+
+.pie__socialDockItem {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-width: 42px;
+  height: 42px;
+
+  /*
+    IMPORTANTE:
+    visible para que el badge de cantidad
+    no quede recortado.
+  */
+  overflow: visible;
+
+  background:
+    rgba(255, 255, 255, 0.018);
+
+  border:
+    1px solid transparent;
+
+  border-radius: 999px;
+
+  transition:
+    max-width 0.28s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.pie__socialDockItem--expandido {
+  max-width: 100%;
+
+  /*
+    Al expandirse sí ocultamos el sobrante
+    para conservar la forma de cápsula.
+  */
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border-color:
+    rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 0, 0, 0.2);
+}
+
+
+/* ======================================================
+   BOTÓN RED
+====================================================== */
+
+.pie__redBoton {
+  position: relative;
+
+  width: 42px;
+  min-width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color:
+    #f3f3f3;
+
+  background:
+    rgba(255, 255, 255, 0.02);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  z-index: 2;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.pie__redBoton:hover,
+.pie__redBoton--activo {
+  transform:
+    scale(1.05);
+}
+
+
+/* Instagram */
+
+.pie__redBoton--instagram:hover,
+.pie__redBoton--instagram.pie__redBoton--activo {
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #833ab4,
+      #fd1d1d,
+      #fcb045
+    );
+
+  border-color:
+    transparent;
+
+  box-shadow:
+    0 5px 16px
+    rgba(253, 29, 29, 0.2);
+}
+
+
+/* Facebook */
+
+.pie__redBoton--facebook:hover,
+.pie__redBoton--facebook.pie__redBoton--activo {
+  color: #fff;
+
+  background:
+    #1877f2;
+
+  border-color:
+    #1877f2;
+
+  box-shadow:
+    0 5px 16px
+    rgba(24, 119, 242, 0.23);
+}
+
+
+/* WhatsApp */
+
+.pie__redBoton--whatsapp:hover,
+.pie__redBoton--whatsapp.pie__redBoton--activo {
+  color: #fff;
+
+  background:
+    #25d366;
+
+  border-color:
+    #25d366;
+
+  box-shadow:
+    0 5px 16px
+    rgba(37, 211, 102, 0.2);
+}
+
+
+/* TikTok */
+
+.pie__redBoton--tiktok:hover,
+.pie__redBoton--tiktok.pie__redBoton--activo {
+  color: #fff;
+
+  background:
+    #121212;
+
+  border-color:
+    rgba(255, 0, 80, 0.6);
+
+  box-shadow:
+    -2px 2px 0
+      rgba(0, 242, 234, 0.3),
+    2px -2px 0
+      rgba(255, 0, 80, 0.22);
+}
+
+
+/* Otra */
+
+.pie__redBoton--otro:hover,
+.pie__redBoton--otro.pie__redBoton--activo {
+  color: #fff;
+
+  background:
+    var(--color-rojo);
+
+  border-color:
+    var(--color-rojo);
+}
+
+
+/* ======================================================
+   CONTADOR DE CUENTAS
+====================================================== */
+
+.pie__redCantidad {
+  position: absolute;
+
+  top: -6px;
+  right: -6px;
+
+  z-index: 10;
+
+  min-width: 17px;
+  height: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding-inline: 4px;
+
+  color: #fff;
+
+  background:
+    var(--color-rojo);
+
+  border:
+    2px solid var(--color-fondo-footer);
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 2px 6px
+    rgba(0, 0, 0, 0.45);
+
+  font-size: 0.5rem;
+  font-weight: 900;
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+
+/* ======================================================
+   EXPANSIÓN DEL DOCK
+====================================================== */
+
+.pie__socialDockExpansion {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.35rem;
+
+  padding:
+    0 0.4rem
+    0 0.5rem;
+
+  animation:
+    pieSocialExpandir
+    0.22s ease;
+}
+
+
+@keyframes pieSocialExpandir {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-7px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+}
+
+
+.pie__socialDockNombre {
+  flex-shrink: 0;
+
+  color:
+    var(--color-blanco);
+
+  font-size: 0.61rem;
+  font-weight: 900;
+}
+
+
+.pie__socialDockCuentas {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.3rem;
+}
+
+
+.pie__socialDockCuenta {
+  min-width: 0;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.25rem;
+
+  padding:
+    0.28rem
+    0.4rem;
+
+  color:
+    var(--color-texto-mudo-claro);
+
+  background:
+    rgba(0, 0, 0, 0.2);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.05);
+
+  border-radius: 999px;
+
+  font-size:
+    0.55rem;
+
+  font-weight:
+    700;
+
+  text-decoration:
+    none;
+
+  white-space:
+    nowrap;
+
+  transition:
+    color 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.pie__socialDockCuenta:hover {
+  color:
+    var(--color-rojo);
+
+  background:
+    rgba(228, 41, 47, 0.06);
+
+  border-color:
+    rgba(228, 41, 47, 0.2);
+
+  transform:
+    translateY(-1px);
+}
+
+
+.pie__socialDockCuenta svg {
+  flex-shrink: 0;
+}
+
+
+.pie__socialDockCerrar {
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color:
+    #777;
+
+  background:
+    transparent;
+
+  border: 0;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    color 0.18s ease,
+    background 0.18s ease;
+}
+
+
+.pie__socialDockCerrar:hover {
+  color:
+    #fff;
+
+  background:
+    rgba(255, 255, 255, 0.06);
+}
+
+
+/* ======================================================
+   CARRUSEL UBICACIÓN
+====================================================== */
+
+.pie__ubicacionCarrusel {
+  width: 100%;
+
+  overflow: hidden;
+
+  background:
+    rgba(255, 255, 255, 0.018);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.075);
+
+  border-radius: 9px;
+}
+
+
+/* ======================================================
+   CABECERA UBICACIÓN
+====================================================== */
+
+.pie__ubicacionSuperior {
+  min-height: 38px;
+
+  display: grid;
+
+  grid-template-columns:
+    30px
+    minmax(0, 1fr)
+    30px;
+
+  align-items: center;
+
+  gap: 0.3rem;
+
+  padding:
+    0.28rem 0.45rem;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+.pie__ubicacionFlecha {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  color: #999;
+
+  background:
+    transparent;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    color 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+
+.pie__ubicacionFlecha:hover:not(:disabled) {
+  color: #fff;
+
+  background:
+    rgba(228, 41, 47, 0.1);
+
+  border-color:
+    rgba(228, 41, 47, 0.22);
+}
+
+
+.pie__ubicacionFlecha:disabled {
+  opacity: 0.2;
+
+  cursor: default;
+}
+
+
+.pie__ubicacionTitulo {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0;
+}
+
+
+.pie__ubicacionTitulo span {
+  color:
+    var(--color-rojo);
+
+  font-size: 0.48rem;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+.pie__ubicacionTitulo strong {
+  max-width: 100%;
+
+  color: #fff;
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  white-space:
+    nowrap;
+
+  overflow:
+    hidden;
+
+  text-overflow:
+    ellipsis;
+}
+
+
+/* ======================================================
+   MINI MAPA
+====================================================== */
+
+.pie__ubicacionContenido {
+  min-height: 132px;
+}
+
+
+.pie__miniMapa {
+  width: 100%;
+  height: 88px;
+
+  overflow: hidden;
+
+  line-height: 0;
+
+  background:
+    #111;
+}
+
+
+.pie__miniMapa iframe {
+  width: 100%;
+  height: 88px;
+
+  display: block;
+}
+
+
+/* ======================================================
+   SUCURSAL SECUNDARIA
+====================================================== */
+
+.pie__sucursalVisual {
+  height: 88px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.35rem;
+
+  color: #777;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(228, 41, 47, 0.07),
+      transparent 65%
+    );
+}
+
+
+.pie__sucursalVisualIcono {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color:
+    var(--color-rojo);
+
+  background:
+    rgba(228, 41, 47, 0.08);
+
+  border:
+    1px solid rgba(228, 41, 47, 0.18);
+
+  border-radius: 50%;
+}
+
+
+.pie__sucursalVisual span {
+  font-size: 0.58rem;
+  font-weight: 700;
+}
+
+
+/* ======================================================
+   DIRECCIÓN COMO ENLACE
+====================================================== */
+
+.pie__ubicacionDireccionEnlace {
+  min-height: 43px;
+
+  box-sizing: border-box;
+
+  display: grid;
+
+  grid-template-columns:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 0.42rem;
+
+  padding:
+    0.46rem 0.6rem;
+
+  color:
+    var(--color-texto-mudo-claro);
+
+  text-decoration: none;
+
+  transition:
+    color 0.18s ease,
+    background 0.18s ease;
+}
+
+
+.pie__ubicacionDireccionEnlace span {
+  min-width: 0;
+
+  font-size: 0.58rem;
+  line-height: 1.3;
+
+  white-space:
+    nowrap;
+
+  overflow:
+    hidden;
+
+  text-overflow:
+    ellipsis;
+}
+
+
+.pie__ubicacionDireccionEnlace > svg {
+  color: #777;
+
+  transition:
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+
+.pie__ubicacionDireccionEnlace:hover {
+  color:
+    var(--color-rojo);
+
+  background:
+    rgba(228, 41, 47, 0.04);
+}
+
+
+.pie__ubicacionDireccionEnlace:hover > svg {
+  color:
+    var(--color-rojo);
+}
+
+
+.pie__ubicacionDireccionEnlace:hover > svg:last-child {
+  transform:
+    translate(
+      2px,
+      -2px
+    );
+}
+
+
+.pie__ubicacionDireccionEnlace--sinLink {
+  cursor: default;
+}
+
+
+.pie__ubicacionDireccionEnlace--sinLink:hover {
+  color:
+    var(--color-texto-mudo-claro);
+
+  background:
+    transparent;
+}
+
+
+/* ======================================================
+   INDICADORES
+====================================================== */
+
+.pie__ubicacionIndicadores {
+  min-height: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.3rem;
+
+  padding-bottom:
+    0.28rem;
+}
+
+
+.pie__ubicacionPunto {
+  width: 5px;
+  height: 5px;
+
+  padding: 0;
+
+  background:
+    #555;
+
+  border: 0;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    width 0.18s ease,
+    background 0.18s ease;
+}
+
+
+.pie__ubicacionPunto--activo {
+  width: 14px;
+
+  border-radius: 999px;
+
+  background:
+    var(--color-rojo);
+}
+
+
+/* ======================================================
+   VACÍO
+====================================================== */
+
+.pie__textoVacio {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 0.66rem;
+}
+
+
+/* ======================================================
+   FRANJA INFERIOR
+====================================================== */
+
+.pie__inferior {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding:
+    0.42rem 2rem;
+
+  color:
+    #626262;
+
+  background:
+    rgba(0, 0, 0, 0.18);
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.045);
+
+  font-size:
+    0.53rem;
+
+  letter-spacing:
+    0.045em;
+}
+
+
+.pie__inferior span:first-child {
+  color:
+    #808080;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    0.075em;
+}
+
+
+/* ======================================================
+   TABLET GRANDE
+====================================================== */
+
+@media (
+  min-width: 1024px
+) and (
+  max-width: 1250px
+) {
+  .pie__contenedor {
+    grid-template-columns:
+      1.12fr
+      0.48fr
+      0.75fr
+      1.12fr;
+
+    gap:
+      1.3rem;
+  }
+
+
+  .pie__logo {
+    height:
+      70px;
+  }
+
+
+  .pie__socialDock {
+    align-items:
+      flex-start;
+  }
+}
+
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 1023px) {
+  .pie__contenedor {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    gap:
+      1.6rem
+      1.5rem;
+  }
+
+
+  .pie__socialDockItem--expandido {
+    width:
+      100%;
+  }
+}
+
+
+/* ======================================================
+   MÓVIL
+====================================================== */
+
+@media (max-width: 639px) {
+  .pie {
+    padding-top:
+      1.35rem;
+  }
+
+
+  .pie__contenedor {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      1.25rem;
+
+    padding-inline:
+      1rem;
+
+    padding-bottom:
+      1rem;
+  }
+
+
+  .pie__marcaVisual {
+    min-height:
+      auto;
+  }
+
+
+  .pie__logo {
+    height:
+      62px;
+  }
+
+
+  .pie__descripcion {
+    max-width:
+      100%;
+
+    font-size:
+      0.76rem;
+
+    line-height:
+      1.45;
+  }
+
+
+  .pie__socialDock {
+    gap:
+      0.45rem;
+  }
+
+
+  .pie__socialDockItem {
+    height:
+      40px;
+
+    min-width:
+      40px;
+  }
+
+
+  .pie__redBoton {
+    width:
+      40px;
+
+    min-width:
+      40px;
+
+    height:
+      40px;
+  }
+
+
+  .pie__socialDockItem--expandido {
+    width:
+      100%;
+
+    height:
+      auto;
+
+    min-height:
+      40px;
+
+    overflow:
+      hidden;
+
+    border-radius:
+      12px;
+  }
+
+
+  .pie__socialDockExpansion {
+    flex: 1;
+
+    flex-wrap:
+      wrap;
+
+    padding:
+      0.35rem
+      0.4rem
+      0.35rem
+      0.45rem;
+  }
+
+
+  .pie__socialDockNombre {
+    width:
+      100%;
+  }
+
+
+  .pie__socialDockCuentas {
+    flex-wrap:
+      wrap;
+  }
+
+
+  .pie__socialDockCuenta {
+    font-size:
+      0.58rem;
+  }
+
+
+  .pie__inferior {
+    padding:
+      0.42rem
+      1rem;
+
+    flex-direction:
+      row;
+
+    align-items:
+      center;
+  }
+
+
+  .pie__inferior span:last-child {
+    text-align:
+      right;
+  }
+}
+
+
+/* ======================================================
+   MÓVIL MUY PEQUEÑO
+====================================================== */
+
+@media (max-width: 380px) {
+  .pie__inferior {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+  }
+
+
+  .pie__inferior span:last-child {
+    text-align:
+      left;
+  }
+}
